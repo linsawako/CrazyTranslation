@@ -33,6 +33,7 @@ public class ExplainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         ButterKnife.bind(this);
 
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -43,13 +44,19 @@ public class ExplainActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         Word word = (Word)intent.getSerializableExtra("word_data");
-        StringBuilder stringBuilder = new StringBuilder();
-        List<String> explainString = word.getBasic().getExplains();
+        String response;
 
-        for (String string: explainString) {
-            stringBuilder.append(string + "\n");
+        if (word.getBasic() != null){
+            StringBuilder stringBuilder = new StringBuilder();
+            List<String> explainString = word.getBasic().getExplains();
+
+            for (String string: explainString) {
+                stringBuilder.append(string + "\n");
+            }
+            response = stringBuilder.toString();
+        }else{
+            response = word.getTranslation().get(0);
         }
-
-        explainText.setText(stringBuilder.toString());
+        explainText.setText(response);
     }
 }

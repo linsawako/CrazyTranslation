@@ -20,6 +20,8 @@ import butterknife.OnClick;
 
 public class MainActivity extends BaseActivity<MainActivity, MainPresenter> implements TranslateContract.View {
 
+    @BindView(R.id.commit)
+    Button btn;
     @BindView(R.id.query_editText)
     EditText query_editText;
 

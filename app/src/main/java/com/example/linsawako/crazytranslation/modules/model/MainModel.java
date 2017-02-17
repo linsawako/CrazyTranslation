@@ -29,6 +29,7 @@ public class MainModel implements TranslateContract.Model {
 
         return RetrofitSingleton.getDefault()
                 .translate(params)
-                .compose(RxScheduler.rxSchedulerHelper());
+                .compose(RxScheduler.rxSchedulerHelper())
+                .compose(RxScheduler.handleResult());
     }
 }
