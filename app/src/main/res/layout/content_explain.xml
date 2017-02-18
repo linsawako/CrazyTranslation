@@ -8,11 +8,41 @@
     tools:context="com.example.linsawako.crazytranslation.modules.activity.ExplainActivity"
     tools:showIn="@layout/activity_explain">
 
-    <TextView
-        android:id="@+id/explain_text"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin"
-        android:text="@string/large_text" />
+        android:layout_margin="5dp"
+        android:orientation="vertical">
+        
+        <android.support.v7.widget.CardView
+            android:id="@+id/phonetic_cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp">
+            <TextView
+                android:id="@+id/phonetic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:paddingLeft="10dp"
+                android:padding="5dp" />
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/expain_cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp">
+            <TextView
+                android:id="@+id/explains"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:paddingLeft="10dp"
+                android:padding="5dp" />
+        </android.support.v7.widget.CardView>
+
+
+    </LinearLayout>
 
 </android.support.v4.widget.NestedScrollView>
